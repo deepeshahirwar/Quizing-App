@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizing App in Js</title>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>  
+    <div class="main">  
+        <div class="big-box">  
+            <div class="outlines">
+            <p>Category: <span>Data Structure and Algorithm</span></p> 
+            <p>Difficulty: <span>Medium</span></p> 
+            <p>Total Questions: <span>10</span></p> 
+            <p>Total score : <span>10</span></p> 
+          </div> 
+
+        <div id="box"> 
+            <h3 id="quesBox">1) this is dummy question ?.</h3>  
+
+            <div class="row"> 
+                <input class="options" id="Option1" type="radio" value="a" name="option">
+                <label for="Option1" >Option 1</label>
+            </div> 
+
+            <div class="row"> 
+                <input class="options" id="Option2" type="radio" value="b" name="option">
+                <label for="Option2"> Option 2</label>
+            </div>
+
+            <div class="row"> 
+                <input class="options" id="Option3" type="radio" value="c" name="option">
+                <label for="Option3"> Option 3</label>
+            </div>
+            <div class="row"> 
+                <input class="options" id="Option4" type="radio" value="d" name="option">
+                <label for="Option4">Option 4</label>
+            </div> 
+
+            <button class="btn" >Submit</button>
+
+        </div>
+    </div>
+</div>
+     
+     
+    <script src="quiz.js"></script>
+</body>
+</html>
