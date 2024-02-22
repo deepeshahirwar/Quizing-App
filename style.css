@@ -55,9 +55,16 @@
     width: 100%;
     margin: 2rem; 
     margin-left: 0px;
- } 
- .btn{
+ }  
+ .buttons{
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  justify-content: space-between; 
   width: 100%;
+ }
+ .submit{
+  width: 27%;
   padding: 5px;
   font-size: 20px;
   border: none;
@@ -65,6 +72,25 @@
   border-radius: 10px;
   background: rgb(71, 176, 75);  
  }   
+ .previous{ 
+   width: 30%;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+ background: rgb(218, 68, 55) ;
+ }  
+ .next{ 
+   width: 27%;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  background: rgb(244, 160, 0);
+ }
+ 
  input{ 
     width: 1rem;
     height: 1rem;

@@ -91,11 +91,12 @@ wrong =0;
 
 const quesbox = document.getElementById("quesBox"); 
 const optionInput = document.querySelectorAll(".options");
-const loadQuestion = () => {   
+const loadQuestion = () => {  
     if(index == total){
         return endQuiz();
-    }
-    reset(); // for reset previous data
+    }  
+      reset();
+    // for reset previous data
     const data = questions[index]; 
     quesbox.innerHTML = `${index+1}.  ${data.que}`;
 
@@ -138,18 +139,41 @@ const reset = ()=>{
         }
     )
 } 
+ 
+//for end Quiz
 
-
-const endQuiz = ()=>{
-  document.getElementById("box").innerHTML =` 
-  <div style = "text-align:center"> 
-  <h2> Thankyou for playing the quiz. </h2> 
-  <h2>Your score : ${right}/${total} are correct </h2> 
-  </div> 
-  `
-} // show the user score 
-
+const endQuiz = ()=>{ 
+   
+    document.getElementById("box").innerHTML =` 
+    <div style = "text-align:center"> 
+    <h2> Thankyou for playing the quiz. </h2> 
+    <h2>Your score : ${right}/${total} are correct </h2> 
+    </div> 
+    `
+} // show the user score  
 loadQuestion(); 
 
-const submitBtn = document.querySelector(".btn");
+// prevous logic 
+const previous = ()=>{ 
+    if(index == 0){
+        alert('You cannot move for previous question');
+    }
+  submitQuiz();
+}  
+// prevous logic 
+const next = ()=>{ 
+    if(index == total-1){
+        alert('You cannot move for next question');
+    }
+    submitQuiz();
+ } 
+
+
+const previousBtn = document.querySelector(".previous");  
+previousBtn.addEventListener("click", previous); 
+
+const nextBtn = document.querySelector(".next"); 
+nextBtn.addEventListener("click", next); 
+
+const submitBtn = document.querySelector(".submit");
 submitBtn.addEventListener("click", submitQuiz);
