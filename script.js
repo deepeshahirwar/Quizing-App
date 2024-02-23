@@ -181,7 +181,7 @@ const totalScore = document.querySelector(".totalScore");
 totalScore.innerHTML = `${total}`; 
 
 const loadQuestion = () => {  
-    if(index == total){
+    if(index == total && move){
         return endQuiz();
     }  
       reset();
@@ -195,17 +195,23 @@ const loadQuestion = () => {
     optionInput[3].nextElementSibling.innerHTML = data.d;
     console.log(data);
 }
+let move;  
 
-// for submit button 
+// for submit button  
+const RightAns = new Set();
 const submitQuiz = () =>{
   const ans = getAnswer();  
   const data = questions[index];
   if(ans == data.correct){// when user answer is correct
-        right++;
-  }else{
-    wrong++;
-  }  
-  index++;
+       RightAns.add(data.correct);
+  }
+  if(move){ 
+    index++;
+  }
+  if(!move){
+    index--;
+  } 
+  move == false;
   loadQuestion();// pick next question
 } 
  // for getting answer from given option
@@ -236,24 +242,30 @@ const endQuiz = ()=>{
     document.getElementById("box").innerHTML =` 
     <div style = "text-align:center"> 
     <h2> Thankyou for playing the quiz. </h2> 
-    <h2>Your score : ${right}/${total} are correct </h2> 
+    <h2>Your score : ${RightAns.size}/${total} are correct </h2> 
     </div> 
     `
 } // show the user score  
 loadQuestion(); 
 
 // prevous logic 
-const previous = ()=>{ 
-    if(index == 0){
-        alert('You cannot move for previous question');
-    }
+const previous = ()=>{  
+  if(index == 0){
+    alert('you cannot move for previous question ') 
+    window.refresh();
+  }
+  if(index > 0)
+   move = false;
    submitQuiz();
 }  
 // prevous logic 
-const next = ()=>{ 
+const next = ()=>{  
     if(index == total-1){
-        alert('You cannot move for next question');
-    }
+        alert('you cannot move for next question ') 
+        window.refresh();
+      }
+    if(index < total)
+    move = true;
     submitQuiz();
  } 
 
@@ -265,4 +277,4 @@ const nextBtn = document.querySelector(".next");
 nextBtn.addEventListener("click", next); 
 
 const submitBtn = document.querySelector(".submit");
-submitBtn.addEventListener("click", submitQuiz);
+submitBtn.addEventListener("click",submitQuiz, endQuiz);
