@@ -1,165 +1,86 @@
 const questions = [
     {
-        'que': 'What is the purpose of the "const" keyword in C++?',
-        'a': 'To declare a constant variable',
-        'b': 'To declare a variable with constant value',
-        'c': 'To define a constant function',
-        'd': 'To declare a variable without a constant value',
-        'correct': 'a'
-    },
-    {
-        'que': 'Which C++ data type is used to store whole numbers?',
-        'a': 'float',
-        'b': 'int',
-        'c': 'char',
-        'd': 'double',
+        'que': 'What is the time complexity of the quicksort algorithm in the best case?',
+        'a': 'O(n)',
+        'b': 'O(n log n)',
+        'c': 'O(n^2)',
+        'd': 'O(log n)',
         'correct': 'b'
     },
     {
-        'que': 'What does the "sizeof" operator in C++ return?',
-        'a': 'Size of a variable in bytes',
-        'b': 'Memory address of a variable',
-        'c': 'Type of a variable',
-        'd': 'Value of a variable',
-        'correct': 'a'
-    },
-    {
-        'que': 'In C++, what is the purpose of the "nullptr" keyword?',
-        'a': 'To define a null pointer',
-        'b': 'To check if a pointer is null',
-        'c': 'To allocate memory for a pointer',
-        'd': 'To delete a pointer',
-        'correct': 'a'
-    },
-    {
-        'que': 'Which C++ loop is used for executing a block of code a fixed number of times?',
-        'a': 'for loop',
-        'b': 'while loop',
-        'c': 'do-while loop',
-        'd': 'if statement',
-        'correct': 'a'
-    },
-    {
-        'que': 'What is the difference between "++i" and "i++" in C++?',
-        'a': 'No difference',
-        'b': '++i increments before the value is used, i++ increments after the value is used',
-        'c': '++i increments after the value is used, i++ increments before the value is used',
-        'd': '++i and i++ are not valid in C++',
-        'correct': 'b'
-    },
-    {
-        'que': 'In C++, what is the purpose of the "break" statement?',
-        'a': 'To exit a loop or switch statement',
-        'b': 'To skip the rest of the code in a function',
-        'c': 'To return a value from a function',
-        'd': 'To continue to the next iteration of a loop',
-        'correct': 'a'
-    },
-    {
-        'que': 'Which C++ keyword is used to define a class?',
-        'a': 'class',
-        'b': 'define',
-        'c': 'struct',
-        'd': 'type',
-        'correct': 'a'
-    },
-    {
-        'que': 'What is the purpose of the "virtual" keyword in C++?',
-        'a': 'To declare a virtual function',
-        'b': 'To define a constant variable',
-        'c': 'To create an instance of a class',
-        'd': 'To declare a pure virtual function',
-        'correct': 'a'
-    },
-    {
-        'que': 'In C++, what is the function of the "friend" keyword in a class?',
-        'a': 'To declare a friend function',
-        'b': 'To define a private member variable',
-        'c': 'To declare a public member function',
-        'd': 'To create an instance of a class',
-        'correct': 'a'
-    },
-    {
-        'que': 'What is the purpose of the "const" member function in a C++ class?',
-        'a': 'To declare a constant object',
-        'b': 'To define a constant member variable',
-        'c': 'To indicate that the function does not modify the object',
-        'd': 'To create an instance of a class',
+        'que': 'Which data structure uses Last In, First Out (LIFO) order?',
+        'a': 'Queue',
+        'b': 'Heap',
+        'c': 'Stack',
+        'd': 'Tree',
         'correct': 'c'
     },
     {
-        'que': 'In C++, what is the purpose of the "namespace" keyword?',
-        'a': 'To define a new data type',
-        'b': 'To create a new class',
-        'c': 'To define a scope for identifiers',
-        'd': 'To allocate memory for a variable',
-        'correct': 'c'
-    },
-    {
-        'que': 'Which C++ header file is used for input and output operations?',
-        'a': 'iostream',
-        'b': 'cmath',
-        'c': 'cstring',
-        'd': 'iomanip',
-        'correct': 'a'
-    },
-    {
-        'que': 'What is the purpose of the "new" operator in C++?',
-        'a': 'To create a new object of a class',
-        'b': 'To allocate memory for a variable or object',
-        'c': 'To define a new data type',
-        'd': 'To delete a variable or object',
+        'que': 'What is the purpose of a hash function in hashing?',
+        'a': 'To generate random numbers',
+        'b': 'To convert data into a fixed-size string of characters',
+        'c': 'To sort elements in an array',
+        'd': 'To find the maximum element in an array',
         'correct': 'b'
     },
     {
-        'que': 'In C++, what is the difference between a shallow copy and a deep copy?',
-        'a': 'No difference',
-        'b': 'A shallow copy duplicates the values, a deep copy duplicates the memory addresses',
-        'c': 'A deep copy duplicates the values, a shallow copy duplicates the memory addresses',
-        'd': 'A shallow copy and a deep copy are the same',
-        'correct': 'c'
-    },
-    {
-        'que': 'Which C++ keyword is used to dynamically allocate memory for an array?',
-        'a': 'new',
-        'b': 'malloc',
-        'c': 'allocate',
-        'd': 'memory',
-        'correct': 'a'
-    },
-    {
-        'que': 'What is the purpose of the "const" qualifier in a function declaration?',
-        'a': 'To declare a constant function',
-        'b': 'To declare a constant object',
-        'c': 'To indicate that the function does not modify the object',
-        'd': 'To define a constant variable',
-        'correct': 'c'
-    },
-    {
-        'que': 'Which C++ standard library container is implemented as a doubly-linked list?',
-        'a': 'vector',
-        'b': 'list',
-        'c': 'deque',
-        'd': 'map',
+        'que': 'Which searching algorithm works on the principle of divide and conquer?',
+        'a': 'Linear Search',
+        'b': 'Binary Search',
+        'c': 'Depth-First Search',
+        'd': 'Breadth-First Search',
         'correct': 'b'
     },
     {
-        'que': 'In C++, what is the purpose of the "try", "catch", and "throw" keywords?',
-        'a': 'To handle exceptions in the code',
-        'b': 'To define a class',
-        'c': 'To declare a constant variable',
-        'd': 'To allocate memory for a variable',
+        'que': 'What is the space complexity of an algorithm?',
+        'a': 'The amount of memory used by an algorithm',
+        'b': 'The time taken by an algorithm to execute',
+        'c': 'The number of comparisons made by an algorithm',
+        'd': 'The size of the input data',
         'correct': 'a'
-    }, 
+    },
     {
-        'que': 'What is the purpose of the "auto" keyword in C++?',
-        'a': 'To declare a variable with automatic storage duration',
-        'b': 'To specify automatic type deduction',
-        'c': 'To create an instance of a class',
-        'd': 'To define a constant variable',
+        'que': 'In a priority queue, what element is removed first?',
+        'a': 'The smallest element',
+        'b': 'The largest element',
+        'c': 'The middle element',
+        'd': 'Random element',
+        'correct': 'a'
+    },
+    {
+        'que': 'What is the main advantage of using a linked list over an array?',
+        'a': 'Faster random access to elements',
+        'b': 'Dynamic size',
+        'c': 'Contiguous memory allocation',
+        'd': 'Lower space complexity',
         'correct': 'b'
-    }
+    },
+    {
+        'que': 'Which algorithm is used for finding the shortest path in a weighted graph?',
+        'a': 'Depth-First Search',
+        'b': 'Breadth-First Search',
+        'c': 'Dijkstra\'s Algorithm',
+        'd': 'Bellman-Ford Algorithm',
+        'correct': 'c'
+    },
+    {
+        'que': 'What is the purpose of the "merge" operation in merge sort?',
+        'a': 'To combine two sorted arrays into a single sorted array',
+        'b': 'To split an array into two halves',
+        'c': 'To search for an element in an array',
+        'd': 'To find the maximum element in an array',
+        'correct': 'a'
+    },
+    {
+        'que': 'Which of the following is not a stable sorting algorithm?',
+        'a': 'Bubble Sort',
+        'b': 'Insertion Sort',
+        'c': 'Quick Sort',
+        'd': 'Merge Sort',
+        'correct': 'c'
+    },
 ];
+
 
 
 
@@ -169,7 +90,7 @@ total = questions.length,
 right =0, 
 wrong =0;  
 
-
+let move; 
  
 const quesbox = document.getElementById("quesBox"); 
 const optionInput = document.querySelectorAll(".options"); 
@@ -196,7 +117,7 @@ const loadQuestion = () => {
     optionInput[3].nextElementSibling.innerHTML = data.d;
     console.log(data);
 }
-let move;  
+ 
 
 // for submit button  
 const RightAns = new Set();
@@ -239,7 +160,8 @@ const reset = ()=>{
 //for end Quiz
 
 const endQuiz = ()=>{  
-   submitQuiz();
+   submitQuiz();  
+   
     document.getElementById("box").innerHTML =` 
     <div style = "text-align:center"> 
     <h2> Thankyou for playing the quiz. </h2> 
@@ -271,7 +193,7 @@ const next = ()=>{
  }  
 
  // for updating time   
- let leftTime = 20;//time in munites 
+ let leftTime = total*30;//time in munites 
  const timerElemet = document.querySelector(".time");  
  
  const updateTimer = ()=>{
