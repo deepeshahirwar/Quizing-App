@@ -163,12 +163,13 @@ const questions = [
 
 
 
-// for loading questions 
-  
+// for loading questions  
 let index =0,
 total = questions.length,
 right =0, 
-wrong =0; 
+wrong =0;  
+
+
  
 const quesbox = document.getElementById("quesBox"); 
 const optionInput = document.querySelectorAll(".options"); 
@@ -267,8 +268,26 @@ const next = ()=>{
     if(index < total)
     move = true;
     submitQuiz();
- } 
+ }  
 
+ // for updating time   
+ let leftTime = 120;//time in munites 
+ const timerElemet = document.querySelector(".time");  
+ const updateTimer = ()=>{
+    let munites = Math.floor(leftTime/60); 
+    let seconds = munites%60;  
+    seconds = seconds<10 ?"0"+seconds:seconds; 
+     
+    timerElemet.innerHTML = `${munites}:${seconds}`; 
+    if(leftTime <= 0){
+     submitQuiz(); 
+     clearInterval(timeInterval);
+    }else{
+        leftTime--;
+    }
+
+ }
+let timeInterval = setInterval(updateTimer,1000); //it update every  second
 
 const previousBtn = document.querySelector(".previous");  
 previousBtn.addEventListener("click", previous); 
