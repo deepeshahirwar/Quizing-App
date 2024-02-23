@@ -182,7 +182,7 @@ const totalScore = document.querySelector(".totalScore");
 totalScore.innerHTML = `${total}`; 
 
 const loadQuestion = () => {  
-    if(index == total && move){
+    if( ( index == total && move ) ){
         return endQuiz();
     }  
       reset();
@@ -204,7 +204,7 @@ const submitQuiz = () =>{
   const ans = getAnswer();  
   const data = questions[index];
   if(ans == data.correct){// when user answer is correct
-       RightAns.add(data.correct);
+       RightAns.add(questions[index]);
   }
   if(move){ 
     index++;
@@ -212,7 +212,7 @@ const submitQuiz = () =>{
   if(!move){
     index--;
   } 
-  move == false;
+  move = false;
   loadQuestion();// pick next question
 } 
  // for getting answer from given option
@@ -238,8 +238,8 @@ const reset = ()=>{
  
 //for end Quiz
 
-const endQuiz = ()=>{ 
-   
+const endQuiz = ()=>{  
+   submitQuiz();
     document.getElementById("box").innerHTML =` 
     <div style = "text-align:center"> 
     <h2> Thankyou for playing the quiz. </h2> 
@@ -271,18 +271,20 @@ const next = ()=>{
  }  
 
  // for updating time   
- let leftTime = 120;//time in munites 
+ let leftTime = 20;//time in munites 
  const timerElemet = document.querySelector(".time");  
+ 
  const updateTimer = ()=>{
-    let munites = Math.floor(leftTime/60); 
-    let seconds = munites%60;  
-    seconds = seconds<10 ?"0"+seconds:seconds; 
-     
-    timerElemet.innerHTML = `${munites}:${seconds}`; 
-    if(leftTime <= 0){
-     submitQuiz(); 
-     clearInterval(timeInterval);
-    }else{
+    let minutes = Math.floor(leftTime / 60);
+    let seconds = leftTime % 60;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    timerElemet.innerHTML = `${minutes}:${seconds}`;
+    if (leftTime <= 0) {  // when time is end do-> calculate user score , display the score 
+        submitQuiz(); 
+        endQuiz();
+        clearInterval(timeInterval);
+    } else {
         leftTime--;
     }
 
@@ -296,4 +298,4 @@ const nextBtn = document.querySelector(".next");
 nextBtn.addEventListener("click", next); 
 
 const submitBtn = document.querySelector(".submit");
-submitBtn.addEventListener("click",submitQuiz, endQuiz);
+submitBtn.addEventListener("click",endQuiz);

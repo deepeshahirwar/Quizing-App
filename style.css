@@ -47,7 +47,13 @@
     background: rgb(236, 234, 234);
    border-radius: 10px; 
    box-shadow: 0px 0px 5px gray; 
- } 
+ }  
+ .timer{
+   border: 1px solid black; 
+   width: 7rem; 
+   padding: 6px; 
+  
+ }
  span{
   color:rgb(71, 176, 75);
  }
